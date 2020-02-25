@@ -63,8 +63,12 @@ public class UnitController {
             if (id.isPresent()) {
                 UnitEntity entity = service.getUnitById(id.get());
                 model.addAttribute("unit", entity);
+                List<UnitEntity> units = service.getAllUnits();
+                model.addAttribute("units", units);
             } else {
                 model.addAttribute("unit", new UnitEntity());
+                List<UnitEntity> units = service.getAllUnits();
+                model.addAttribute("units", units);
             }
             return "add-edit-unit";
         } catch (Exception e) {
