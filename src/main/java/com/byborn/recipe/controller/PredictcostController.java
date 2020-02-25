@@ -159,7 +159,8 @@ public class PredictcostController {
                 ic_service.deleteIngredientcostById(ice.getInid());
             }
         }
-        
+        costlist = ic_service.getAllIngredientcosts();
+
         model.addAttribute("ingredientcosts", costlist);
 
         
@@ -252,7 +253,7 @@ public class PredictcostController {
             List<IngredientcostEntity> ingredientcosts = ic_service.getAllIngredientcosts();
             
             for(IngredientcostEntity ice : ingredientcosts) {
-                if ( ice.getIuid() == ice.getUid() ) {
+                if ( ice.getIuid() == ice.getUid() && ice.getTotal2() > 0.0 ) {
                         double total = ice.getTotal()  ;
                         double allitems = Math.ceil( total * days / ice.getTotal2()) ;
                         double allcost = allitems * ice.getCost();
@@ -262,7 +263,7 @@ public class PredictcostController {
                     List<UnitEntity> units = u_service.getAllUnits();
                     boolean flag_found = false;
                     for ( UnitEntity u : units) {
-                        if ( ice.getIuid() == u.getId() && ice.getUid() == u.getUID2() ) {
+                        if ( ice.getIuid() == u.getId() && ice.getUid() == u.getUID2() && ice.getTotal2() > 0.0  ) {
                             flag_found = true;
                             double total = ice.getTotal() * u.getTotal2() ;
                             double allitems = Math.ceil( total * days / ice.getTotal2() )  ;
@@ -273,7 +274,7 @@ public class PredictcostController {
                     }
                     if ( flag_found ){
                     } else {
-                        ice.setAllcost( -1.0 );
+                        ice.setAllcost( 0.0 );
                     }
                 }
                 ic_service.createOrUpdateIngredientcost(ice);
