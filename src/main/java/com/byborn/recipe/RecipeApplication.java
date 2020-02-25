@@ -1,7 +1,7 @@
 package com.byborn.recipe;
 
 import org.springframework.boot.SpringApplication;
-import or       g.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class RecipeApplication  {
