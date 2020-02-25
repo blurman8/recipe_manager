@@ -37,14 +37,13 @@
                                 <div class="form-group col-md-8">
                                     <label for="total2" class="col-form-label">Ingredient Total</label> <br>
                                     <input type="text" th:field="*{total2}" class="form-control"
-                                           id="total2" placeholder="total2" />
+                                           id="total2" placeholder="total2" pattern="^[0-9]+\.?[0-9]*$" required />
                                 </div>
                                  
                                 
                                 <div class="form-group col-md-8">
                                     <label for="uid" class="col-form-label">Unit</label> 
-                                    <select class="form-control" th:field="*{uid}"   id="uid">
-                                        <option value="0">select operator</option>
+                                    <select class="form-control" th:field="*{uid}"   id="uid"> 
                                         <option 
                                             th:each="ulist : ${units}" 
                                             th:value="${ulist.Id}" 
@@ -55,7 +54,7 @@
                                 <div class="form-group col-md-8">
                                     <label for="cost" class="col-form-label">Cost</label> 
                                     <input type="text" th:field="*{cost}" class="form-control"
-                                           id="cost" placeholder="cost" />
+                                           id="cost" placeholder="cost" pattern="^[0-9]+\.?[0-9]*$" required />
                                 </div>
 
                                 <div class="col-md-6">
