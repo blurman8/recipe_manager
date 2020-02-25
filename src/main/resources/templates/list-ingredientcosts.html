@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>All Ingredientcost</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    </head>
+
+    <body>
+        <div class="container my-2">
+            <div class="card">
+                <div class="card-body">
+                    <div th:switch="${ingredientcosts}" class="container my-5">
+                        <p class="my-5">
+                        <table>
+                            <td>
+                                <a href="/" class="btn btn-primary">
+                                    <i class="fas fa-home ml-2"> Home </i></a> 
+                            </td>
+                            <td>
+                                <a href="/predictcost/edit" class="btn btn-primary">
+                                    <i class="fas fa-plus-circle ml-2"> Add Ingredientcost </i></a>
+                            </td>
+                        </table>
+                        </p>
+                        <div class="col-md-10">
+                            <h2 th:case="null">No record found !!</h2>
+                            <div th:case="*">
+                                <table class="table table-striped table-responsive-md">
+                                    <thead>
+                                        <tr>
+                                            <th>INID</th>
+                                            <th>Nameingredient</th>
+                                            <th>Total</th>  
+                                            <th>UID</th>  
+                                            <th>Nameunit</th>  
+                                            <th>Cost</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="ingredientcost : ${ingredientcosts}">
+                                            <td th:text="${ingredientcost.inid}"></td>
+                                            <td th:text="${ingredientcost.Nameingredient}"></td> 
+                                            <td th:text="${ingredientcost.Total}"></td> 
+                                            <td th:text="${ingredientcost.uid}"></td> 
+                                            <td th:text="${ingredientcost.Nameunit}"></td> 
+                                            <td th:text="${ingredientcost.Cost}"></td> 
+                                            <td>
+                                                <a th:href="@{/ingredientcost/edit/{id}(id=${ingredientcost.inid})}" class="btn btn-primary">
+                                                    <i class="fas fa-user-edit ml-2"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <!--a th:href="@{/ingredientcost/delete/{id}(id=${ingredientcost.id})}" class="btn btn-primary">
+                                                    <i class="fas fa-plus-circle ml-2"></i>
+                                                </a-->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
