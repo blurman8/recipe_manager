@@ -27,7 +27,7 @@ public class UnitEntity {
     private Long id;
 
     @Column(name = "Nameunit")
-    private String name;
+    private String nameunit;
 
     @Column(name = "Total1")
     private Double total1;
@@ -38,7 +38,17 @@ public class UnitEntity {
     @Column(name = "UID2")
     private Long UID2;
 
- 
+    public UnitEntity() {
+        
+    }
+    
+    public UnitEntity( Long in_id, String in_nameunit, Double in_total1, Long in_uid2 , Double in_total2) {
+        id = in_id;
+        nameunit = in_nameunit;
+        total1 = in_total1;
+        UID2 = in_uid2;
+        total2 = in_total2;
+    }
 
     public Long getId() {
         return id;
@@ -49,11 +59,11 @@ public class UnitEntity {
     }
 
     public String getNameunit() {
-        return name;
+        return nameunit;
     }
 
-    public void setNameunit(String in_name) {
-        name = in_name;
+    public void setNameunit(String in_nameunit) {
+        nameunit = in_nameunit;
     }
 
     public Double getTotal1() {
