@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>All Predictcost</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    </head>
+
+    <body>
+        <div class="container my-2">
+            <div class="card">
+                <div class="card-body">
+                    <div th:switch="${predictcosts}" class="container my-5">
+                        <p class="my-5">
+                        <table>
+                            <td>
+                                <a href="/" class="btn btn-primary">
+                                    <i class="fas fa-home ml-2"> Home </i></a> 
+                            </td>
+                            <td>
+                                <a href="/predictcost/edit" class="btn btn-primary">
+                                    <i class="fas fa-plus-circle ml-2"> Add Predictcost </i></a>
+                            </td>
+                        </table>
+                        </p>
+                        <div class="col-md-10">
+                            <h2 th:case="null">No record found !!</h2>
+                            <div th:case="*">
+                                <table class="table table-striped table-responsive-md">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Total</th>  
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="predictcost : ${predictcosts}">
+                                            <td th:text="${predictcost.Namerecipe}"></td>
+                                            <td th:text="${predictcost.Total}"></td> 
+                                            <td>
+                                                <a th:href="@{/predictcost/edit/{id}(id=${predictcost.id})}" class="btn btn-primary">
+                                                    <i class="fas fa-user-edit ml-2"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a th:href="@{/predictcost/delete/{id}(id=${predictcost.id})}" class="btn btn-primary">
+                                                    <i class="fas fa-plus-circle ml-2"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-2">
+            <div class="card">
+                <div class="card-body">
+                    <table width="80%" >
+                        <tr>
+                            <td width="25%" align="right">
+                                <a th:href="@{/predictcost/start}"   class="btn btn-info">
+                                <i class="fas fa-greater-than ml-2"> Reset Ingredient Cost </i></a>
+                            </td>
+                            <td width="25%" align="right">
+                                <a th:href="@{/predictcost/cal/1}"   class="btn btn-success">
+                                <i class="fas fa-greater-than ml-2"> Calculation 1 day</i></a>
+                            </td>
+                            <td width="25%" align="right">
+                                <a th:href="@{/predictcost/cal/7}"   class="btn btn-success">
+                                <i class="fas fa-greater-than ml-2"> Calculation 7 days</i></a>
+                            </td>
+                            <td width="25%" align="right">
+                                <a th:href="@{/predictcost/cal/30}"   class="btn btn-success">
+                                <i class="fas fa-greater-than ml-2"> Calculation 1 months</i></a>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                            
+                    <table class="table table-striped table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th>Ingredient Name</th>
+                                <th>Total Used</th>  
+                                <th>Ingredient Total</th>  
+                                <th>Unit name</th>  
+                                <th>Cost</th>  
+                                <th>All Cost</th>  
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="ingredientcost : ${ingredientcosts}">
+                                <td th:text="${ingredientcost.Nameingredient}"></td>
+                                <td th:text="${ingredientcost.Total}"></td> 
+                                <td th:text="${ingredientcost.Total2}"></td> 
+                                <td th:text="${ingredientcost.Nameunit}"></td> 
+                                <td th:text="${ingredientcost.Cost}"></td> 
+                                <td th:text="${ingredientcost.Allcost}"></td> 
+                                <td>
+                                    <a th:href="@{/predictcost/edit/cost/{id}(id=${ingredientcost.inid})}" class="btn btn-primary">
+                                        <i class="fas fa-user-edit ml-2"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
