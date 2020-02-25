@@ -36,6 +36,14 @@ public class IngredientEntity {
     //@NotEmpty(message = "*Please provide a Description")
     private String description;
 
+    public IngredientEntity ( Long in_id, String in_nameingredient, String in_description ) {
+        id = in_id;
+        nameingredient = in_nameingredient;
+        description = in_description;
+    }
+    public IngredientEntity () {
+    
+    }
     
  
     public Long getId() {
