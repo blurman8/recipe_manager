@@ -50,7 +50,7 @@
                                             </td>
                                             <td>
                                                 <a th:href="@{/predictcost/delete/{id}(id=${predictcost.id})}" class="btn btn-primary">
-                                                    <i class="fas fa-plus-circle ml-2"></i>
+                                                    <i class="fas fa-user-times ml-2"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -92,22 +92,18 @@
                         <thead>
                             <tr>
                                 <th>Ingredient Name</th>
-                                <th>Total Used</th>  
                                 <th>Ingredient Total</th>  
                                 <th>Unit name</th>  
                                 <th>Cost</th>  
-                                <th>All Cost</th>  
                                 <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr th:each="ingredientcost : ${ingredientcosts}">
                                 <td th:text="${ingredientcost.Nameingredient}"></td>
-                                <td th:text="${ingredientcost.Total}"></td> 
                                 <td th:text="${ingredientcost.Total2}"></td> 
                                 <td th:text="${ingredientcost.Nameunit}"></td> 
                                 <td th:text="${ingredientcost.Cost}"></td> 
-                                <td th:text="${ingredientcost.Allcost}"></td> 
                                 <td>
                                     <a th:href="@{/predictcost/edit/cost/{id}(id=${ingredientcost.inid})}" class="btn btn-primary">
                                         <i class="fas fa-user-edit ml-2"></i>

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
 </head>
  
 <body>
@@ -25,27 +26,42 @@
         <div class="card">
             <div class="card-body">
                 <div class="col-md-10">
-                    <form action="#" th:action="@{/unit/createUnit}" th:object="${unit}" method="post">
+                    <form action="#" th:action="@{/unit/createUnit}" th:object="${unit}" method="post" data-toggle="validator" role="form">
                         <div class="row">
                             <div class="form-group col-md-8">
                                 <label for="nameunit" class="col-form-label"> Name</label> 
                                 <input type="text" th:field="*{Nameunit}" class="form-control"
-                                            id="nameunit" placeholder="Nameunit" />
+                                            id="nameunit" placeholder="Nameunit" required />
                             </div>
                             <div class="form-group col-md-8">
                                 <label for="total1" class="col-form-label">Total</label> 
                                 <input type="text" th:field="*{Total1}" class="form-control"
-                                            id="total1" placeholder="Total1" />
+                                            id="total1" placeholder="0.0" pattern="^[0-9]+\.?[0-9]*$" required />
                             </div>
-                            <div class="form-group col-md-8">
+                            <!--div class="form-group col-md-8">
                                 <label for="UID2" class="col-form-label">Unit (convert)</label> 
                                 <input type="text" th:field="*{UID2}" class="form-control"
                                             id="UID2" placeholder="UID2" />
+                            </div-->
+                            <div class="form-group col-md-8">
+                                <label for="UID2" class="col-form-label">Unit</label> 
+                                <select class="form-control" th:field="*{UID2}"   id="UID2">
+                                    <option 
+                                        th:each="ulist : ${units}" 
+                                        th:value="${ulist.Id}" 
+                                        th:text="${ulist.Nameunit}"
+                                        th:selected="${ ulist.Id == uid }" ></option>
+                                </select>
                             </div>
+                            
+                            
                             <div class="form-group col-md-8">
                                 <label for="total2" class="col-form-label">Total (convert)</label> 
+                                <!--input type="text" th:field="*{Total2}" class="form-control"
+                                    id="total2" placeholder="Total2" /-->
                                 <input type="text" th:field="*{Total2}" class="form-control"
-                                            id="total2" placeholder="Total2" />
+                                    id="total2"  placeholder="0.0"  pattern="^[0-9]+\.?[0-9]*$" required />
+                                <div class="help-block with-errors"></div>
                             </div>
                             
  
@@ -65,6 +81,7 @@
             </div>
         </div>
     </div>
+    
 </body>
  
 </html>

@@ -1,1 +1,5 @@
 com\byborn\recipe\RecipeApplicationTests.class
+com\byborn\recipe\service\IngredientServiceTest.class
+com\byborn\recipe\service\UnitControllerTest.class
+com\byborn\recipe\service\IngredientControllerTest.class
+com\byborn\recipe\service\UnitServiceTest.class

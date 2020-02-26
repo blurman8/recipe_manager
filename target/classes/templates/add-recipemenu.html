@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>     
     </head>
 
     <body>
@@ -39,7 +40,6 @@
                                 <div class="form-group col-md-8">
                                     <label for="inid" class="col-form-label">Ingredient</label> 
                                     <select class="form-control" th:field="*{inid}"   id="inid">
-                                        <option value="0">select operator</option>
                                         <option 
                                             th:each="inlist : ${ingredients}" 
                                             th:value="${inlist.Id}" 
@@ -50,12 +50,11 @@
                                 <div class="form-group col-md-8">
                                     <label for="total" class="col-form-label">Total</label> 
                                     <input type="text" th:field="*{total}" class="form-control"
-                                           id="total" placeholder="total" />
+                                           id="total" placeholder="total" pattern="^[0-9]+\.?[0-9]*$" required />
                                 </div>
                                 <div class="form-group col-md-8">
                                     <label for="uid" class="col-form-label">Unit</label> 
                                     <select class="form-control" th:field="*{uid}"   id="uid">
-                                        <option value="0">select operator</option>
                                         <option 
                                             th:each="ulist : ${units}" 
                                             th:value="${ulist.Id}" 
