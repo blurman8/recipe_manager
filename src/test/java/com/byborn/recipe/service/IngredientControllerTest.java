@@ -67,14 +67,15 @@ public class IngredientControllerTest {
         mockMvc.perform(get("/ingredient/edit/2")).andDo(print()).andExpect(content().string(containsString("Pepper")));
 
          
-        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.post("/ingredient/createUnit")
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.post("/ingredient/createIngredient")
             //.contentType("application/x-www-form-urlencoded")
             .param("id", "2")
             .param("Nameingredient", "NewIngredient")
-            .param("Description", "NewIngredient");
+            .param("Description", "Description");
+ 
         mockMvc.perform(builder)
             .andDo(MockMvcResultHandlers.print())
-            .andExpect(content().string(containsString("NewIngredient")));
+            .andExpect(redirectedUrl("/ingredient"));
 
         mockMvc.perform(get("/ingredient/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("NewIngredient")));
 

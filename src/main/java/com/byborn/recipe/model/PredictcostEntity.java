@@ -36,6 +36,16 @@ public class PredictcostEntity {
     @JoinColumn(name = "RID", referencedColumnName = "ID", nullable = true, insertable = false, updatable = false)
     private RecipeEntity recipe;
 
+    public PredictcostEntity( ) {
+    
+    }
+    
+    public PredictcostEntity( Long in_id, Long in_rid, Double in_total) {
+        id = in_id;
+        rid = in_rid;
+        total = in_total;
+    }
+
     public Long getId() {
         return id;
     }

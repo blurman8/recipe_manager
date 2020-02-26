@@ -56,6 +56,17 @@ public class RecipemenuEntity {
     @JoinColumn(name = "UID", referencedColumnName = "ID", nullable = true, insertable = false, updatable = false)
     private UnitEntity unit;
 
+    public RecipemenuEntity() {
+    }
+    
+    public RecipemenuEntity(Long in_id, Long in_rid, Long in_inid, Double in_total, Long in_uid) {
+        id = in_id;
+        rid = in_rid;
+        inid = in_inid;
+        total = in_total;
+        uid = in_uid;
+    }
+    
     public IngredientEntity getIngredient() {
         return ingredient;
     }

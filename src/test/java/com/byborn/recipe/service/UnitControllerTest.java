@@ -72,7 +72,7 @@ public class UnitControllerTest {
 
 
         mockMvc.perform(get("/unit/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("ounce(oz)")));
-        mockMvc.perform(get("/unit/edit/2")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("name=\"NameUnit\" value=\"\"")));
+        mockMvc.perform(get("/unit/edit/2")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("28.35")));
 
         System.out.println("org result : " +unitService.getAllUnits().size());
 

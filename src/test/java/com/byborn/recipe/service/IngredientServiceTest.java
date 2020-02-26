@@ -20,7 +20,7 @@ public class IngredientServiceTest {
     @Test
     void FindAllIngredient() {
         assertEquals(10, ingredientService.getAllIngredients().size());
-        assertEquals("Pepper", ingredientService.getAllIngredients().get(1).getNameingredient());
+        assertEquals("Tomato", ingredientService.getAllIngredients().get(6).getNameingredient());
         assertEquals("Cheese" , ingredientService.getAllIngredients().get(3).getNameingredient());
     }
 
@@ -28,7 +28,7 @@ public class IngredientServiceTest {
     void FindIngredient() {
         assertEquals("Cheese", ingredientService.getIngredientById((long) 4).getNameingredient());
     }
-/*
+    
     @Test
     void TestAdd_Remove() {
         assertEquals(10, ingredientService.getAllIngredients().size());
@@ -43,5 +43,4 @@ public class IngredientServiceTest {
         assertEquals("Cheese", ingredientService.getIngredientById((long) 4).getNameingredient());
         assertThrows(RecordNotFoundException.class,() -> ingredientService.getIngredientById((long)11));
     }
-*/
 }

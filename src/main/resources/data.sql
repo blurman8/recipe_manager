@@ -45,8 +45,7 @@ VALUES
 INSERT INTO 
     predictcost (ID, RID, Total ) 
 VALUES
-    (1, 1, 30),
-    (2, 2, 45);
+    (1, 1, 30);
 
 INSERT INTO 
     `ingredientcost` ( INID, Nameingredient, Total, IUID, Total2, UID, Nameunit, Cost, Allcost, Countitem )

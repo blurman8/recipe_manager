@@ -51,6 +51,26 @@ public class IngredientcostEntity {
     @Column(name = "Nameunit")
     private String nameunit;
 
+    public IngredientcostEntity() {
+     
+    }
+    
+    public IngredientcostEntity(Long in_inid, String in_nameingredient, 
+            Double in_total, Long in_iuid, Double in_total2, 
+            Long   in_uid, String in_nameunit, Double in_cost, 
+            Double in_allcost, Double in_countitem) {
+        inid = in_inid;
+        nameingredient = in_nameingredient; 
+        total = in_total;
+        iuid = in_iuid;
+        total2 = in_total2; 
+        uid = in_uid;
+        nameunit = in_nameunit;
+        cost = in_cost;
+        allcost = in_allcost;
+        countitem = in_countitem;
+    }
+
     public Long getInid() {
         return inid;
     }

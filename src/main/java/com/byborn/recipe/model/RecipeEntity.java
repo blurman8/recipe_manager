@@ -25,7 +25,7 @@ public class RecipeEntity {
     @Column(name = "Namerecipe")
     @Length(min = 5, message = "*Your recipe name must have at least 5 characters")
     //@NotEmpty(message = "*Please provide a recipe name")
-    private String name;
+    private String namerecipe;
 
     @NotBlank(message = "Description is mandatory")
     @Column(name = "Description")
@@ -33,8 +33,15 @@ public class RecipeEntity {
     //@NotEmpty(message = "*Please provide a Description")
     private String description;
 
- 
-    
+    public RecipeEntity () {
+        
+    } 
+    public RecipeEntity ( Long in_id, String in_namerecipe, String in_description ) {
+        id = in_id;
+        namerecipe = in_namerecipe;
+        description = in_description;
+    }
+
     
     public Long getId() {
         return id;
@@ -45,11 +52,11 @@ public class RecipeEntity {
     }
 
     public String getNamerecipe() {
-        return name;
+        return namerecipe;
     }
 
-    public void setNamerecipe(String in_name) {
-        name = in_name;
+    public void setNamerecipe(String in_namerecipe) {
+        namerecipe = in_namerecipe;
     }
 
     public String getDescription() {
