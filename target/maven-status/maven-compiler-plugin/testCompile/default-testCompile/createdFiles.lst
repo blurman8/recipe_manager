@@ -1,10 +1,10 @@
-com\byborn\recipe\service\PrediectcostControllerTest.class
+com\byborn\recipe\controller\RecipemenuControllerTest.class
+com\byborn\recipe\controller\IngredientControllerTest.class
+com\byborn\recipe\controller\PrediectcostControllerTest.class
 com\byborn\recipe\service\RecipemenuServiceTest.class
 com\byborn\recipe\service\IngredientServiceTest.class
-com\byborn\recipe\service\UnitControllerTest.class
-com\byborn\recipe\service\IngredientControllerTest.class
-com\byborn\recipe\service\RecipeControllerTest.class
 com\byborn\recipe\RecipeApplicationTests.class
-com\byborn\recipe\service\RecipemenuControllerTest.class
+com\byborn\recipe\controller\UnitControllerTest.class
+com\byborn\recipe\controller\RecipeControllerTest.class
 com\byborn\recipe\service\RecipeServiceTest.class
 com\byborn\recipe\service\UnitServiceTest.class

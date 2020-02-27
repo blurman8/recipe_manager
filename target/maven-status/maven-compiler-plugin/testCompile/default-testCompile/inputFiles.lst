@@ -1,10 +1,10 @@
-C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\service\RecipemenuControllerTest.java
-C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\service\UnitControllerTest.java
-C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\service\PrediectcostControllerTest.java
+C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\controller\UnitControllerTest.java
 C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\service\RecipemenuServiceTest.java
 C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\service\UnitServiceTest.java
 C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\service\IngredientServiceTest.java
-C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\service\RecipeControllerTest.java
-C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\service\IngredientControllerTest.java
+C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\controller\RecipeControllerTest.java
+C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\controller\IngredientControllerTest.java
+C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\controller\PrediectcostControllerTest.java
+C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\controller\RecipemenuControllerTest.java
 C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\RecipeApplicationTests.java
 C:\Users\pueng\Documents\netbeans\recipe_manager\src\test\java\com\byborn\recipe\service\RecipeServiceTest.java
