@@ -268,6 +268,8 @@ public class PredictcostController {
                             double total = ice.getTotal() * u.getTotal2() ;
                             double allitems = Math.ceil( total * days / ice.getTotal2() )  ;
                             double allcost = allitems * ice.getCost();
+                            ice.setIuid( u.getUID2() );
+                            ice.setTotal(total);
                             ice.setCountitem( allitems );
                             ice.setAllcost( allcost );
                         }
